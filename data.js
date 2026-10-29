@@ -6,14 +6,14 @@
 
 const CURRICULUM_DATA = [
   /* ========================================================================
-     BAB I. LOGIKA DAN ANALITIKA (Sub-Bab A s/d H)
+     BAB I. LOGIKA DAN ANALITIKA (Sub-Bab A s/d H — Konsep Umum & Analitika)
      ======================================================================== */
   {
     id: "bab-1",
     roman: "I",
     title: "Logika dan Analitika",
     description:
-      "Materi ini menguji kemampuan peserta dalam memahami kondisi, menarik kesimpulan, dan menyelesaikan masalah secara logis serta implementasinya dalam pemrograman Java.",
+      "Materi ini menguji kemampuan peserta dalam memahami kondisi, menarik kesimpulan, dan menyelesaikan masalah secara logis. Peserta dapat diberikan suatu kondisi atau beberapa pernyataan dan diminta menentukan nilai benar/salah, kesimpulan, atau kemungkinan yang tepat.",
     subtopics: [
       {
         id: "1-a",
@@ -22,40 +22,32 @@ const CURRICULUM_DATA = [
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🧠 1. Pembahasan Materi: Konsep Logika Dasar</h3>
-              <p><strong>Logika dasar</strong> adalah fondasi berpikir sistematis untuk menentukan apakah suatu argumen atau alur instruksi komputer bersifat <strong>sah (valid)</strong> berdasarkan fakta (premis) yang tersedia.</p>
+              <h3>🧠 1. Pembahasan Materi: Hakikat Logika Dasar</h3>
+              <p><strong>Logika dasar</strong> adalah ilmu dan kecakapan berpikir secara teratur, runtut, dan masuk akal untuk menarik kesimpulan yang <strong>sah (valid)</strong> dari sejumlah fakta atau informasi yang tersedia.</p>
               <ul>
-                <li><strong>Premis (Fakta Awal):</strong> Pernyataan yang diketahui benar sebagai titik tolak penalaran (dalam Java berupa nilai awal variabel atau parameter input).</li>
-                <li><strong>Inferensi (Proses Penalaran):</strong> Aturan menghubungkan premis satu dengan lainnya tanpa menambahkan asumsi di luar fakta.</li>
-                <li><strong>Konklusi (Kesimpulan):</strong> Hasil akhir yang pasti bernilai benar apabila seluruh premisnya benar.</li>
+                <li><strong>Premis (Pernyataan Dasar / Fakta Awal):</strong> Informasi, aturan, atau pernyataan yang dianggap benar pada soal sebagai landasan berpikir.</li>
+                <li><strong>Inferensi (Proses Penalaran):</strong> Langkah menghubungkan premis-premis secara sistematis sesuai kaidah logika.</li>
+                <li><strong>Konklusi (Kesimpulan):</strong> Pernyataan hasil akhir yang ditarik secara mutlak dari premis-premis yang ada.</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Penerapan Logika Dasar pada Program Java</h3>
-              <p>Dalam bahasa pemrograman <strong>Java</strong>, komputer tidak menebak-nebak, melainkan mengeksekusi instruksi secara ketat mengikuti logika biner (<code>true</code> atau <code>false</code>):</p>
+              <h3>🔍 2. Tiga Prinsip Utama Berpikir Logis</h3>
               <ul>
-                <li>Setiap keputusan di Java dievaluasi menggunakan tipe data primitif <code>boolean</code>.</li>
-                <li>Urutan logis instruksi dari baris atas ke bawah menentukan perubahan status variabel di memori.</li>
+                <li><strong>Prinsip Bebas Asumsi Luar:</strong> Kesimpulan hanya boleh ditarik dari fakta yang tertulis pada premis. Jangan menambahkan opini pribadi di luar informasi soal.</li>
+                <li><strong>Prinsip Identitas &amp; Non-Kontradiksi:</strong> Suatu pernyataan tidak mungkin bernilai benar sekaligus salah pada waktu dan kondisi yang sama.</li>
+                <li><strong>Kebenaran Faktual vs Kesahihan (Validitas):</strong> Suatu kesimpulan disebut <em>valid</em> apabila alur penalarannya mengikuti aturan logika yang benar dari premisnya.</li>
               </ul>
             </div>
           </div>
           <div class="info-card">
-            <h3>📖 3. Contoh Pembahasan Kasus &amp; Kode Java</h3>
-            <p><strong>Kasus:</strong> Seorang pendaftar dinyatakan <em>Lolos Administrasi</em> apabila usianya minimal 18 tahun dan memiliki kartu identitas aktif.</p>
-            <div class="code-snippet-box">
-              <div class="code-box-header"><span class="code-lang-tag">JAVA • Pembahasan Logika Dasar</span></div>
-              <pre class="code-pre" data-highlight="java">public class PembahasanLogikaDasar {
-    public static void main(String[] args) {
-        int usia = 20;
-        boolean punyaKTP = true;
-
-        // Premis 1: usia >= 18 (20 >= 18 -> true)
-        // Premis 2: punyaKTP (true)
-        boolean lolos = (usia >= 18) && punyaKTP;
-        System.out.println("Lolos Administrasi: " + lolos); // Output: true
-    }
-}</pre>
-            </div>
+            <h3>📖 3. Contoh Pembahasan Kasus Penalaran Logika Dasar</h3>
+            <p><strong>Kasus 1 (Batas Informasi Premis):</strong><br>
+            <em>Premis 1:</em> Semua peserta ujian yang datang terlambat wajib melapor ke panitia.<br>
+            <em>Premis 2:</em> Raka melapor ke panitia.<br>
+            <strong>Analisis:</strong> Apakah Raka pasti datang terlambat? <strong>Belum tentu!</strong> Premis hanya menyatakan bahwa yang terlambat wajib melapor, tetapi tidak melarang peserta yang datang tepat waktu untuk melapor ke panitia karena keperluan lain.</p>
+            <p style="margin-top:8px;"><strong>Kasus 2 (Sifat Transitif Perbandingan):</strong><br>
+            Gedung A lebih tinggi daripada Gedung B. Gedung B lebih tinggi daripada Gedung C.<br>
+            <strong>Kesimpulan Pasti:</strong> Urutan tinggi gedung dari yang tertinggi adalah <strong>A &gt; B &gt; C</strong>, sehingga Gedung A pasti lebih tinggi daripada Gedung C.</p>
           </div>
         `
       },
@@ -66,25 +58,23 @@ const CURRICULUM_DATA = [
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>⚖️ 1. Pembahasan Materi: Proposisi vs Kalimat Terbuka</h3>
-              <p><strong>Pernyataan (Proposisi)</strong> adalah kalimat deklaratif yang dapat ditentukan nilai kebenarannya secara tegas: <strong>Benar (<code>true</code>)</strong> atau <strong>Salah (<code>false</code>)</strong>, namun tidak keduanya sekaligus.</p>
+              <h3>⚖️ 1. Pembahasan Materi: Pernyataan (Proposisi) vs Bukan Pernyataan</h3>
+              <p>Dalam logika, <strong>Pernyataan (Proposisi)</strong> adalah kalimat berita (deklaratif) yang memiliki nilai kebenaran pasti: <strong>Benar (B)</strong> saja atau <strong>Salah (S)</strong> saja, tidak boleh meragukan atau bermakna ganda.</p>
               <ul>
-                <li><strong>Pernyataan Benar:</strong> "Hasil dari <code>15 % 4</code> di Java adalah <code>3</code>." (Bernilai <code>true</code>).</li>
-                <li><strong>Pernyataan Salah:</strong> "Tipe data <code>int</code> di Java dapat menyimpan angka desimal <code>3.14</code>." (Bernilai <code>false</code>).</li>
-                <li><strong>Bukan Pernyataan:</strong> Kalimat perintah atau tanya seperti <em>"Masukkan nilai x!"</em>.</li>
-                <li><strong>Kalimat Terbuka:</strong> Kalimat yang memuat variabel (misal <code>x * 3 == 12</code>) yang baru menjadi proposisi setelah variabel <code>x</code> diberi nilai.</li>
+                <li><strong>Pernyataan Benar (B):</strong> <em>"Ibu kota negara Indonesia adalah Jakarta"</em> atau <em>"Hasil dari 12 ditambah 8 adalah 20."</em></li>
+                <li><strong>Pernyataan Salah (S):</strong> <em>"Satu minggu terdiri dari 10 hari"</em> atau <em>"Bilangan 9 adalah bilangan prima."</em></li>
+                <li><strong>Bukan Pernyataan:</strong> Kalimat tanya (<em>"Jam berapa rapat dimulai?"</em>), kalimat perintah (<em>"Tutup pintu itu!"</em>), atau kalimat harapan/opini subjektif (<em>"Lukisan itu sangat indah"</em>).</li>
+                <li><strong>Kalimat Terbuka:</strong> Kalimat yang masih mengandung variabel yang belum diketahui nilainya, misalnya <em>"Kota X terletak di Pulau Jawa"</em> atau <em>"x + 5 = 12"</em>. Kalimat terbuka baru menjadi pernyataan setelah variabelnya diganti dengan objek/nilai tertentu.</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Evaluasi Nilai Kebenaran di Java</h3>
-              <p>Di Java, ekspresi perbandingan seperti <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, dan <code>&lt;=</code> secara otomatis mengubah kalimat terbuka menjadi nilai <code>boolean</code> (<code>true</code>/<code>false</code>).</p>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Evaluasi Pernyataan</span></div>
-                <pre class="code-pre" data-highlight="java">int x = 4;
-boolean p1 = (x * 3 == 12); // true (karena 4 * 3 adalah 12)
-boolean p2 = (x > 10);      // false (karena 4 tidak lebih dari 10)
-System.out.println(p1 + " dan " + p2); // Output: true dan false</pre>
-              </div>
+              <h3>🔄 2. Nilai Kebenaran &amp; Ingkaran Pernyataan Tunggal</h3>
+              <p>Setiap pernyataan tunggal P memiliki <strong>ingkaran (negasi)</strong> yang dilambangkan dengan ~ P atau ¬ P, yaitu pernyataan baru yang bernilai kebalikan dari pernyataan semula:</p>
+              <ul>
+                <li>Jika pernyataan P bernilai <strong>Benar (B)</strong>, maka ingkarannya (¬ P) bernilai <strong>Salah (S)</strong>.</li>
+                <li>Jika pernyataan P bernilai <strong>Salah (S)</strong>, maka ingkarannya (¬ P) bernilai <strong>Benar (B)</strong>.</li>
+                <li><strong>Contoh Hati-hati pada Perbandingan:</strong> Ingkaran dari <em>"Skor ujian Andi lebih dari 75"</em> (x &gt; 75) bukanlah <em>"kurang dari 75"</em>, melainkan <strong>"Skor ujian Andi kurang dari atau sama dengan 75"</strong> (x ≤ 75).</li>
+              </ul>
             </div>
           </div>
         `
@@ -96,39 +86,39 @@ System.out.println(p1 + " dan " + p2); // Output: true dan false</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🔗 1. Pembahasan Materi: Tiga Operator Logika Fundamental</h3>
+              <h3>🔗 1. Pembahasan Materi: Operator Logika Dasar (AND, OR, NOT)</h3>
+              <p>Dua atau lebih pernyataan tunggal dapat digabungkan menjadi <strong>pernyataan majemuk</strong> menggunakan kata hubung logika:</p>
               <ul>
-                <li><strong>Konjungsi (AND / <code>&amp;&amp;</code>):</strong> Menghasilkan nilai <strong><code>true</code></strong> HANYA JIKA kedua pernyataan bernilai <code>true</code>. Jika salah satu saja <code>false</code>, hasilnya pasti <code>false</code>.</li>
-                <li><strong>Disjungsi (OR / <code>||</code>):</strong> Menghasilkan nilai <strong><code>true</code></strong> JIKA minimal salah satu pernyataan bernilai <code>true</code>. Hanya bernilai <code>false</code> jika keduanya <code>false</code>.</li>
-                <li><strong>Negasi (NOT / <code>!</code>):</strong> Membalik nilai kebenaran: <code>!true</code> menjadi <code>false</code>, dan <code>!false</code> menjadi <code>true</code>.</li>
+                <li><strong>Konjungsi — DAN (AND / ∧):</strong> Pernyataan majemuk <em>"P dan Q"</em> bernilai <strong>Benar (B)</strong> HANYA JIKA kedua pernyataan P dan Q sama-sama bernilai <strong>Benar</strong>. Jika salah satu saja Salah, maka keseluruhannya bernilai <strong>Salah (S)</strong>.</li>
+                <li><strong>Disjungsi — ATAU (OR / ∨):</strong> Pernyataan majemuk <em>"P atau Q"</em> bernilai <strong>Benar (B)</strong> apabila <strong>minimal salah satu</strong> dari P atau Q bernilai Benar. Hanya bernilai <strong>Salah (S)</strong> jika keduanya sama-sama Salah.</li>
+                <li><strong>Negasi — TIDAK / BUKAN (NOT / ¬):</strong> Membalik nilai kebenaran suatu pernyataan (NOT Benar = Salah, NOT Salah = Benar).</li>
               </ul>
-              <p><strong>Urutan Prioritas Evaluasi di Java:</strong> Operator <code>!</code> (NOT) dievaluasi paling dulu, kemudian <code>&amp;&amp;</code> (AND), dan terakhir <code>||</code> (OR), kecuali jika dikelompokkan dengan tanda kurung <code>( )</code>.</p>
             </div>
             <div class="info-card">
-              <h3>📊 2. Tabel Kebenaran Lengkap &amp; Kode Java</h3>
+              <h3>📊 2. Tabel Kebenaran Lengkap (AND, OR, NOT)</h3>
               <div class="data-table-wrap">
                 <table class="logic-table">
                   <thead>
-                    <tr><th>P</th><th>Q</th><th>!P</th><th>P &amp;&amp; Q</th><th>P || Q</th></tr>
+                    <tr><th>P</th><th>Q</th><th>NOT P (¬ P)</th><th>P AND Q (P ∧ Q)</th><th>P OR Q (P ∨ Q)</th></tr>
                   </thead>
                   <tbody>
-                    <tr><td class="val-true">true</td><td class="val-true">true</td><td class="val-false">false</td><td class="val-true">true</td><td class="val-true">true</td></tr>
-                    <tr><td class="val-true">true</td><td class="val-false">false</td><td class="val-false">false</td><td class="val-false">false</td><td class="val-true">true</td></tr>
-                    <tr><td class="val-false">false</td><td class="val-true">true</td><td class="val-true">true</td><td class="val-false">false</td><td class="val-true">true</td></tr>
-                    <tr><td class="val-false">false</td><td class="val-false">false</td><td class="val-true">true</td><td class="val-false">false</td><td class="val-false">false</td></tr>
+                    <tr><td class="val-true">Benar (B)</td><td class="val-true">Benar (B)</td><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td><td class="val-true">Benar (B)</td></tr>
+                    <tr><td class="val-true">Benar (B)</td><td class="val-false">Salah (S)</td><td class="val-false">Salah (S)</td><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td></tr>
+                    <tr><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td><td class="val-true">Benar (B)</td><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td></tr>
+                    <tr><td class="val-false">Salah (S)</td><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td><td class="val-false">Salah (S)</td><td class="val-false">Salah (S)</td></tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-          <div class="code-snippet-box">
-            <div class="code-box-header"><span class="code-lang-tag">JAVA • Prioritas !, &amp;&amp;, dan ||</span></div>
-            <pre class="code-pre" data-highlight="java">boolean a = true, b = false, c = false;
-// Tanpa kurung: && dikerjakan sebelum ||
-boolean hasil1 = a || b && c;   // true || (false && false) -> true || false = true
-// Dengan kurung:
-boolean hasil2 = (a || b) && c; // (true || false) && false -> true && false = false
-System.out.println(hasil1 + ", " + hasil2); // Output: true, false</pre>
+          <div class="info-card">
+            <h3>💡 3. Hukum De Morgan (Ingkaran Kalimat "DAN" serta "ATAU")</h3>
+            <ul>
+              <li><strong>Ingkaran dari Konjungsi ¬(P  DAN  Q) ≡ ¬ P  ATAU  ¬ Q:</strong><br>
+              Ingkaran dari <em>"Budi membawa KTP <strong>dan</strong> memakai kemeja putih"</em> adalah <em>"Budi <strong>tidak</strong> membawa KTP <strong>atau</strong> Budi <strong>tidak</strong> memakai kemeja putih."</em></li>
+              <li><strong>Ingkaran dari Disjungsi ¬(P  ATAU  Q) ≡ ¬ P  DAN  ¬ Q:</strong><br>
+              Ingkaran dari <em>"Hari ini turun hujan <strong>atau</strong> angin bertiup kencang"</em> adalah <em>"Hari ini <strong>tidak</strong> turun hujan <strong>dan</strong> angin <strong>tidak</strong> bertiup kencang."</em></li>
+            </ul>
           </div>
         `
       },
@@ -139,29 +129,36 @@ System.out.println(hasil1 + ", " + hasil2); // Output: true, false</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>➡️ 1. Pembahasan Materi: Implikasi (Jika P maka Q)</h3>
-              <p><strong>Implikasi (<code>P → Q</code>)</strong> menyatakan hubungan janji atau syarat sebab-akibat antara anteseden/hipotesis (<code>P</code>) dan konsekuen/kesimpulan (<code>Q</code>).</p>
+              <h3>➡️ 1. Pembahasan Materi: Pernyataan Bersyarat / Implikasi (P → Q)</h3>
+              <p><strong>Implikasi</strong> adalah pernyataan majemuk bersyarat berbentuk <strong>"Jika P, maka Q"</strong> (P → Q), di mana P disebut <em>anteseden</em> (sebab / syarat cukup) dan Q disebut <em>konsekuen</em> (akibat / syarat perlu).</p>
               <ul>
-                <li><strong>Kapan Implikasi Bernilai SALAH?</strong> Hanya pada satu keadaan: ketika sebab <code>P</code> bernilai <strong><code>true</code></strong> tetapi akibat <code>Q</code> bernilai <strong><code>false</code></strong> (janji dilanggar).</li>
-                <li>Jika <code>P</code> bernilai <code>false</code>, maka apa pun nilai <code>Q</code>, implikasi <code>P → Q</code> tetap dianggap <strong><code>true</code></strong> (<em>vacuously true</em>).</li>
-                <li><strong>Bentuk Ekuivalen Penting:</strong>
-                  <br>• Bentuk Disjungsi (dipakai di Java): <code>P → Q  ≡  !P || Q</code>
-                  <br>• Bentuk Kontraposisi: <code>P → Q  ≡  !Q → !P</code>
-                  <br>• Ingkaran/Negasi Implikasi: <code>!(P → Q)  ≡  P &amp;&amp; !Q</code>
-                </li>
+                <li><strong>Aturan Kebenaran Implikasi:</strong> Implikasi P → Q diibaratkan sebagai sebuah <strong>janji</strong>. Janji tersebut <strong>HANYA bernilai SALAH (S)</strong> apabila syarat P terpenuhi (<strong>Benar</strong>), tetapi janji Q diingkari (<strong>Salah</strong>).</li>
+                <li>Apabila syarat P tidak terjadi (<strong>Salah</strong>), maka apa pun kondisi Q (baik Benar maupun Salah), pernyataan implikasi P → Q tetap dianggap <strong>Benar (B)</strong> karena janji tidak dilanggar.</li>
               </ul>
+              <div class="data-table-wrap">
+                <table class="logic-table">
+                  <thead>
+                    <tr><th>Sebab (P)</th><th>Akibat (Q)</th><th>Jika P maka Q (P → Q)</th><th>Keterangan Logis</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="val-true">Benar (B)</td><td class="val-true">Benar (B)</td><td class="val-true">Benar (B)</td><td>Syarat terpenuhi, janji ditepati</td></tr>
+                    <tr><td class="val-true">Benar (B)</td><td class="val-false">Salah (S)</td><td class="val-false">Salah (S)</td><td>Syarat terpenuhi, janji diingkari!</td></tr>
+                    <tr><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td><td class="val-true">Benar (B)</td><td>Syarat tidak terjadi, aturan tetap sah</td></tr>
+                    <tr><td class="val-false">Salah (S)</td><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td><td>Syarat tidak terjadi, aturan tetap sah</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Implementasi Implikasi di Java</h3>
-              <p>Karena Java tidak memiliki operator khusus <code>-&gt;</code> untuk boolean, rumus <code>(!P || Q)</code> digunakan untuk mengevaluasi kebenaran implikasi <code>P → Q</code>:</p>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Evaluasi Implikasi (!P || Q)</span></div>
-                <pre class="code-pre" data-highlight="java">boolean hujan = true;        // P
-boolean bawaPayung = false;  // Q
-// Implikasi: Jika hujan maka bawa payung (!P || Q)
-boolean tepatiJanji = !hujan || bawaPayung;
-System.out.println(tepatiJanji); // Output: false (karena P=true tapi Q=false)</pre>
-              </div>
+              <h3>🔄 2. Konvers, Invers, Kontraposisi &amp; Ingkaran Implikasi</h3>
+              <p>Dari sebuah implikasi awal <strong>"Jika P, maka Q"</strong> (P → Q), terdapat 3 bentuk turunan dan 1 bentuk ingkaran yang sangat sering diujikan:</p>
+              <ul>
+                <li><strong>Konvers (Q → P):</strong> <em>"Jika Q, maka P"</em> (Membalik posisi sebab dan akibat — <strong>belum tentu setara</strong> dengan kalimat asli).</li>
+                <li><strong>Invers (¬ P → ¬ Q):</strong> <em>"Jika tidak P, maka tidak Q"</em> (Menegasikan kedua ruas tanpa membalik posisi — setara dengan Konvers).</li>
+                <li><strong>Kontraposisi (¬ Q → ¬ P):</strong> <em>"Jika tidak Q, maka tidak P"</em> (Membalik sekaligus menegasikan — <strong>SELALU SETARA / EKUIVALEN</strong> dengan implikasi asli P → Q!).</li>
+                <li><strong>Bentuk Disjungsi Setara (¬ P ∨ Q):</strong> <em>"Tidak P atau Q"</em>.</li>
+                <li><strong>Ingkaran / Negasi Implikasi (P ∧ ¬ Q):</strong> <em>"P terjadi, <strong>tetapi</strong> Q tidak terjadi."</em> (Hati-hati: ingkaran dari "Jika P maka Q" BUKANLAH kalimat "Jika...", melainkan kata hubung DAN/TETAPI!).</li>
+              </ul>
             </div>
           </div>
         `
@@ -174,24 +171,29 @@ System.out.println(tepatiJanji); // Output: false (karena P=true tapi Q=false)</
           <div class="concept-grid">
             <div class="info-card">
               <h3>↔️ 1. Pembahasan Materi: Biimplikasi (P ↔ Q)</h3>
-              <p><strong>Biimplikasi ("Jika dan hanya jika" / <em>If and only if</em>)</strong> adalah penggabungan dua implikasi bolak-balik: <code>(P → Q) ∧ (Q → P)</code>.</p>
+              <p><strong>Biimplikasi</strong> adalah pernyataan majemuk dengan kata hubung <strong>"... jika dan hanya jika ..."</strong> (dalam bahasa Inggris: <em>If and only if / Iff</em>), yang dilambangkan dengan P ↔ Q.</p>
               <ul>
-                <li><strong>Aturan Nilai Kebenaran:</strong> Biimplikasi <code>P ↔ Q</code> bernilai <strong><code>true</code></strong> apabila <code>P</code> dan <code>Q</code> memiliki <strong>nilai kebenaran yang kembar/sama</strong> (keduanya <code>true</code> atau keduanya <code>false</code>).</li>
-                <li>Jika salah satu <code>true</code> dan satunya <code>false</code>, maka biimplikasi bernilai <strong><code>false</code></strong>.</li>
-                <li><strong>Ingkaran Biimplikasi:</strong> <code>!(P ↔ Q) ≡ (P ↔ !Q)</code> atau operasi XOR (<code>P != Q</code> di Java).</li>
+                <li><strong>Makna Dua Arah:</strong> Pernyataan P ↔ Q bermakna (P → Q)  DAN  (Q → P). Artinya, P adalah syarat perlu dan cukup bagi Q, begitu pula sebaliknya.</li>
+                <li><strong>Aturan Nilai Kebenaran:</strong> Biimplikasi P ↔ Q bernilai <strong>Benar (B)</strong> apabila kedua pernyataan P dan Q memiliki <strong>nilai kebenaran yang SAMA / KEMBAR</strong> (sama-sama Benar, atau sama-sama Salah).</li>
+                <li>Jika salah satu bernilai Benar sedangkan yang lain bernilai Salah, maka biimplikasi bernilai <strong>Salah (S)</strong>.</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Representasi Biimplikasi di Java</h3>
-              <p>Dalam kode program Java, biimplikasi antara dua ekspresi boolean <code>P</code> dan <code>Q</code> dievaluasi menggunakan operator kesamaan <code>(P == Q)</code>:</p>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Biimplikasi (P == Q)</span></div>
-                <pre class="code-pre" data-highlight="java">int angka = 8;
-boolean p = (angka % 2 == 0); // true (genap)
-boolean q = (angka > 10);     // false (tidak > 10)
-boolean biimplikasi = (p == q); // true == false -> false
-System.out.println("Nilai P <-> Q: " + biimplikasi);</pre>
+              <h3>📊 2. Tabel Kebenaran &amp; Contoh Analisis Biimplikasi</h3>
+              <div class="data-table-wrap">
+                <table class="logic-table">
+                  <thead>
+                    <tr><th>P</th><th>Q</th><th>P ↔ Q (Jika dan hanya jika)</th><th>Status Nilai Kebenaran</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="val-true">Benar (B)</td><td class="val-true">Benar (B)</td><td class="val-true">Benar (B)</td><td>Kedua pernyataan sama-sama Benar</td></tr>
+                    <tr><td class="val-true">Benar (B)</td><td class="val-false">Salah (S)</td><td class="val-false">Salah (S)</td><td>Nilai kebenaran berbeda</td></tr>
+                    <tr><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td><td class="val-false">Salah (S)</td><td>Nilai kebenaran berbeda</td></tr>
+                    <tr><td class="val-false">Salah (S)</td><td class="val-false">Salah (S)</td><td class="val-true">Benar (B)</td><td>Kedua pernyataan sama-sama Salah</td></tr>
+                  </tbody>
+                </table>
               </div>
+              <p style="margin-top:10px;"><strong>Contoh:</strong> Pernyataan <em>"Sebuah segitiga disebut sama sisi jika dan hanya jika ketiga sisinya sama panjang."</em> Jika sebuah segitiga ketiga sisinya tidak sama panjang (Salah), maka ia pasti bukan segitiga sama sisi (Salah), sehingga aturan biimplikasi tersebut tetap bernilai <strong>Benar</strong>.</p>
             </div>
           </div>
         `
@@ -203,22 +205,30 @@ System.out.println("Nilai P <-> Q: " + biimplikasi);</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🧩 1. Pembahasan Materi: Teknik Analisis Kondisi</h3>
-              <p>Soal analisis kondisi menguji ketajaman membaca batasan (<em>constraints</em>) seperti posisi urutan, penjadwalan, seleksi anggota, maupun teka-teki jujur-bohong (interogasi saksi):</p>
+              <h3>🧩 1. Pembahasan Materi: Empat Tipe Soal Analisis Kondisi</h3>
+              <p>Soal <strong>Analisis Kondisi (Analytical Reasoning)</strong> menguji kemampuan memetakan sejumlah syarat/batasan (<em>constraints</em>) untuk menentukan kemungkinan atau kepastian yang tepat:</p>
               <ol>
-                <li><strong>Catat Syarat Mutlak:</strong> Tulis syarat yang sudah pasti (misal: "Dua di antara mereka adalah pengacara" atau "M5 selalu di urutan pertama").</li>
-                <li><strong>Bandingkan Klaim yang Saling Bertentangan:</strong> Jika terdapat kuota kebenaran (misal: "Hanya 1 pernyataan yang benar"), ujilah skenario pada kelompok pernyataan pertama untuk mengunci di mana letak 1 pernyataan yang benar tersebut.</li>
-                <li><strong>Tarik Dampak ke Pernyataan Lain:</strong> Begitu kuota 1 pernyataan benar sudah terpakai, maka seluruh pernyataan sisanya otomatis bernilai <strong>Salah (<code>false</code>)</strong>, sehingga kebalikannya adalah fakta yang sebenarnya!</li>
+                <li><strong>Analisis Urutan / Peringkat (Ordering):</strong> Menyusun urutan objek berdasarkan petunjuk perbandingan (<em>lebih tinggi, sebelum, tepat sesudah, di antara</em>).</li>
+                <li><strong>Analisis Posisi Tempat Duduk (Seating Arrangement):</strong> Menyusun posisi sebaris atau melingkar dengan memperhatikan syarat <em>bersebelahan</em>, <em>berhadapan</em>, atau <em>di ujung</em>.</li>
+                <li><strong>Analisis Seleksi &amp; Penjadwalan (Grouping):</strong> Memilih anggota tim atau menyusun jadwal dengan memperhatikan syarat wajib bersama (A → B) dan syarat saling menolak (A → ¬ B).</li>
+                <li><strong>Teka-Teki Pernyataan Jujur–Bohong (Saksi):</strong> Menentukan fakta sebenarnya ketika diketahui hanya sejumlah tertentu pernyataan yang bernilai benar.</li>
               </ol>
             </div>
             <div class="info-card">
-              <h3>🕵️ 2. Pembahasan Lengkap Kasus Pencurian Rumah Duduy</h3>
-              <p><strong>Diketahui:</strong> Angga ($A_1$: pengacara, $A_2$: tidak terlibat), Bandi ($B_1$: bukan pengacara, $B_2$: tahu pencurinya), Cinta ($C_1$: pengacara, $C_2$: tidak tahu pencurinya). Hanya 1 pernyataan benar &amp; 2 orang adalah pengacara.</p>
+              <h3>🕵️ 2. Pembahasan Lengkap Kasus Interogasi Pencurian Rumah Duduy</h3>
+              <p><strong>Soal Klasik:</strong> Tiga orang (Angga, Bandi, Cinta) diinterogasi terkait pencurian di rumah Duduy:<br>
+              • <strong>Angga:</strong> (1) Saya pengacara. (2) Saya tidak terlibat.<br>
+              • <strong>Bandi:</strong> (1) Saya bukan pengacara. (2) Saya tahu pencurinya.<br>
+              • <strong>Cinta:</strong> (1) Saya pengacara. (2) Saya tidak tahu pencurinya.<br>
+              <em>Kondisi:</em> Hanya <strong>1 pernyataan yang benar</strong> dari total 6 kalimat, dan <strong>2 di antara mereka adalah pengacara</strong>.</p>
               <ul>
-                <li>Jika Angga &amp; Cinta pengacara: $A_1, B_1, C_1$ semuanya benar (3 benar → mustahil).</li>
-                <li>Jika Angga &amp; Bandi pengacara: hanya $A_1$ benar (1 benar).</li>
-                <li>Jika Bandi &amp; Cinta pengacara: hanya $C_1$ benar (1 benar).</li>
-                <li>Artinya, 1 pernyataan benar pasti berada di antara $A_1$ atau $C_1$. Maka $A_2, B_2, C_2$ <strong>pasti SALAH</strong>. Karena $A_2$ ("Saya tidak terlibat") salah, maka <strong>Angga adalah pencurinya</strong>!</li>
+                <li><strong>Langkah 1 (Uji klaim profesi A<sub>1</sub>, B<sub>1</sub>, C<sub>1</sub>):</strong>
+                  <br>• Jika Angga &amp; Cinta pengacara → A<sub>1</sub>, B<sub>1</sub>, C<sub>1</sub> ketiganya benar (3 benar → mustahil).
+                  <br>• Jika Angga &amp; Bandi pengacara → hanya A<sub>1</sub> benar (1 benar).
+                  <br>• Jika Bandi &amp; Cinta pengacara → hanya C<sub>1</sub> benar (1 benar).
+                </li>
+                <li><strong>Langkah 2 (Tarik kesimpulan):</strong> Dalam kondisi yang mungkin, 1 pernyataan yang benar pasti berada di pernyataan profesi (A<sub>1</sub> atau C<sub>1</sub>). Artinya, seluruh pernyataan kedua (A<sub>2</sub>, B<sub>2</sub>, C<sub>2</sub>) <strong>pasti SALAH</strong>!</li>
+                <li>Karena pernyataan Angga <em>"Saya tidak terlibat"</em> (A<sub>2</sub>) bernilai <strong>SALAH</strong>, maka fakta sebenarnya adalah <strong>Angga terlibat (Angga adalah pencurinya)</strong>!</li>
               </ul>
             </div>
           </div>
@@ -231,26 +241,37 @@ System.out.println("Nilai P <-> Q: " + biimplikasi);</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🔽 1. Pembahasan Materi: Penalaran Deduktif</h3>
-              <p><strong>Deduksi</strong> menarik kesimpulan khusus yang pasti benar dari aturan umum yang telah terbukti:</p>
+              <h3>🔽 1. Pembahasan Materi: Penalaran Deduktif (Umum → Khusus)</h3>
+              <p><strong>Penalaran Deduktif</strong> adalah proses menarik kesimpulan khusus yang <strong>pasti benar</strong> dari premis-premis umum menggunakan empat kaidah baku:</p>
               <ul>
-                <li><strong>Modus Ponens:</strong> Premis 1: <code>P → Q</code>, Premis 2: <code>P</code> benar. Kesimpulan: <strong><code>Q</code> benar</strong>.</li>
-                <li><strong>Modus Tollens:</strong> Premis 1: <code>P → Q</code>, Premis 2: <code>¬Q</code> (Q salah). Kesimpulan: <strong><code>¬P</code> (P salah)</strong>.</li>
-                <li><strong>Silogisme Hipotetis:</strong> Premis 1: <code>P → Q</code>, Premis 2: <code>Q → R</code>. Kesimpulan: <strong><code>P → R</code></strong>.</li>
-                <li><strong>Silogisme Disjungtif:</strong> Premis 1: <code>P ∨ Q</code>, Premis 2: <code>¬P</code>. Kesimpulan: <strong><code>Q</code></strong>.</li>
+                <li><strong>Modus Ponens:</strong><br>
+                Premis 1: Jika P maka Q (P → Q)<br>
+                Premis 2: P terjadi (Benar)<br>
+                <strong>Kesimpulan:</strong> Maka <strong>Q pasti terjadi</strong>.</li>
+                <li><strong>Modus Tollens:</strong><br>
+                Premis 1: Jika P maka Q (P → Q)<br>
+                Premis 2: Q tidak terjadi (¬ Q)<br>
+                <strong>Kesimpulan:</strong> Maka <strong>P pasti tidak terjadi (¬ P)</strong>.</li>
+                <li><strong>Silogisme Hipotetis (Rantai Sebab-Akibat):</strong><br>
+                Premis 1: Jika P maka Q (P → Q)<br>
+                Premis 2: Jika Q maka R (Q → R)<br>
+                <strong>Kesimpulan:</strong> Maka <strong>Jika P maka R (P → R)</strong>.</li>
+                <li><strong>Silogisme Disjungtif:</strong><br>
+                Premis 1: P atau Q (P ∨ Q)<br>
+                Premis 2: Ternyata bukan P (¬ P)<br>
+                <strong>Kesimpulan:</strong> Maka <strong>pasti Q</strong>.</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>🔼 2. Pembahasan Materi: Penalaran Induktif</h3>
-              <p><strong>Induksi</strong> mengamati pola dari sejumlah kasus spesifik (misalnya hasil output untuk input $n = 1, 2, 3, 4$) lalu merumuskan formula umum untuk suku ke-$n$.</p>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Induksi Pola ke Rumus Method</span></div>
-                <pre class="code-pre" data-highlight="java">// Observasi: n=1 -> 2, n=2 -> 6, n=3 -> 12, n=4 -> 20
-// Pola: 1*2, 2*3, 3*4, 4*5 -> Rumus induktif: n * (n + 1)
-static int rumusInduktif(int n) {
-    return n * (n + 1);
-}</pre>
-              </div>
+              <h3>🔼 2. Penalaran Induktif &amp; Jebakan Sesat Pikir (Fallacy)</h3>
+              <p><strong>Penalaran Induktif (Khusus → Umum):</strong> Mengamati sejumlah fakta, data, atau kejadian khusus yang berulang, lalu menarik kesimpulan umum (generalisasi) atau memprediksi pola berikutnya.</p>
+              <ul>
+                <li><strong>Contoh Induksi:</strong> Mengamati bahwa besi memuai saat dipanaskan, tembaga memuai saat dipanaskan, dan aluminium memuai saat dipanaskan → <em>Kesimpulan Induktif:</em> Semua logam memuai jika dipanaskan.</li>
+                <li><strong>Waspadai Dua Jebakan Deduksi yang TIDAK SAH (Fallacy):</strong>
+                  <br>1. <em>Affirming the Consequent:</em> Diketahui P → Q dan fakta Q terjadi, lalu menyimpulkan P pasti terjadi. (<strong>SALAH!</strong> Contoh: "Jika hujan maka jalan basah. Jalan basah." Belum tentu hujan, bisa saja jalan baru disiram).
+                  <br>2. <em>Denying the Antecedent:</em> Diketahui P → Q dan fakta ¬ P, lalu menyimpulkan ¬ Q. (<strong>SALAH!</strong>).
+                </li>
+              </ul>
             </div>
           </div>
         `
@@ -262,31 +283,24 @@ static int rumusInduktif(int n) {
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🛠️ 1. Pembahasan Materi: Strategi Problem Solving</h3>
-              <p>Untuk menyelesaikan soal penalaran logis kompleks maupun merancang algoritma Java:</p>
-              <ol>
-                <li><strong>Identifikasi Kuantor:</strong> Bedakan kuantor universal (<em>Semua / Setiap</em>) dan eksistensial (<em>Ada / Beberapa / Minimal satu</em>).</li>
-                <li><strong>Ingkaran Kuantor:</strong>
-                  <br>• Negasi dari <em>"Semua $x$ memenuhi $P$"</em> adalah <strong>"Ada minimal satu $x$ yang tidak memenuhi $P$"</strong>.
-                  <br>• Negasi dari <em>"Ada $x$ yang memenuhi $P$"</em> adalah <strong>"Semua $x$ tidak memenuhi $P$"</strong>.
+              <h3>🛠️ 1. Pembahasan Materi: Penalaran Kuantor &amp; Himpunan Sifat</h3>
+              <p>Dalam menyelesaikan masalah penalaran logis, perhatikan perbedaan cakupan kata depan (<strong>kuantor</strong>):</p>
+              <ul>
+                <li><strong>Kuantor Universal (Semua / Setiap / Seluruh):</strong> Berlaku tanpa terkecuali. Untuk membuktikan pernyataan <em>"Semua A adalah B"</em> bernilai SALAH, cukup ditemukan <strong>satu contoh penyangkal (counterexample)</strong> yaitu satu anggota A yang bukan B.</li>
+                <li><strong>Kuantor Eksistensial (Ada / Beberapa / Sebagian / Sementara):</strong> Berlaku untuk minimal satu anggota (tetapi tidak harus semuanya).</li>
+                <li><strong>Aturan Ingkaran Kuantor:</strong>
+                  <br>• Ingkaran dari <em>"Semua peserta lulus ujian"</em> adalah <strong>"Ada (minimal satu) peserta yang tidak lulus ujian"</strong> (Bukan "Semua peserta tidak lulus!").
+                  <br>• Ingkaran dari <em>"Ada peserta yang datang terlambat"</em> adalah <strong>"Semua peserta tidak datang terlambat"</strong> (atau <em>"Tidak ada peserta yang datang terlambat"</em>).
                 </li>
-                <li><strong>Metode Eliminasi &amp; Tabel Matriks:</strong> Gunakan tabel silang ($\checkmark$ / $\times$) untuk memetakan pasangan objek dan syaratnya.</li>
-              </ol>
+              </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Penerapan Problem Solving di Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Pengecekan Kuantor pada Array</span></div>
-                <pre class="code-pre" data-highlight="java">int[] nilai = {80, 85, 90, 72, 88};
-boolean semuaLulus = true;
-for (int i = 0; i < nilai.length; i++) {
-    if (nilai[i] < 75) { // Cukup 1 contoh penyangkal (72 < 75)
-        semuaLulus = false;
-        break;
-    }
-}
-System.out.println("Semua lulus (>=75): " + semuaLulus); // false</pre>
-              </div>
+              <h3>🎯 2. Strategi Problem Solving Analitis</h3>
+              <ol>
+                <li><strong>Metode Tabel Silang (Matriks Eliminasi):</strong> Saat mencocokkan beberapa orang dengan profesi/kota/pilihan yang berbeda, buat tabel baris-kolom lalu beri tanda × pada pasangan yang mustahil dan ✓ pada pasangan yang sudah pasti.</li>
+                <li><strong>Prinsip Kemungkinan Terburuk (Pigeonhole Principle):</strong> Untuk mencari jumlah pengambilan minimum agar <em>pasti</em> mendapatkan kondisi tertentu, hitung skenario terburuk terlebih dahulu lalu tambahkan 1.</li>
+                <li><strong>Analisis Irisan Minimum:</strong> Jika dari N orang terdapat A orang menyukai kopi dan B orang menyukai teh, maka jumlah minimum orang yang menyukai keduanya adalah (A + B) - N.</li>
+              </ol>
             </div>
           </div>
         `
@@ -295,14 +309,14 @@ System.out.println("Semua lulus (>=75): " + semuaLulus); // false</pre>
   },
 
   /* ========================================================================
-     BAB II. ARITMATIKA DAN MATEMATIKA DASAR (Sub-Bab A s/d L)
+     BAB II. ARITMATIKA DAN MATEMATIKA DASAR (Sub-Bab A s/d L — Konsep & Rumus Matematika Umum)
      ======================================================================== */
   {
     id: "bab-2",
     roman: "II",
     title: "Aritmatika dan Matematika Dasar",
     description:
-      "Materi ini menguji kemampuan menghitung sekaligus memahami pola dan hubungan antarbilangan serta penerapannya dalam komputasi program Java.",
+      "Materi ini menguji kemampuan menghitung sekaligus memahami pola dan hubungan antarbilangan. Soal dapat berupa perhitungan langsung maupun masalah yang membutuhkan penalaran dan penyusunan langkah penyelesaian.",
     subtopics: [
       {
         id: "2-a",
@@ -311,29 +325,34 @@ System.out.println("Semua lulus (>=75): " + semuaLulus); // false</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>➕ 1. Pembahasan Materi: Empat Operasi Dasar &amp; Aturan Tanda</h3>
+              <h3>➕ 1. Pembahasan Materi: Empat Operasi Dasar &amp; Aturan Bilangan Bertanda</h3>
               <ul>
-                <li><strong>Penjumlahan (<code>+</code>) &amp; Pengurangan (<code>-</code>):</strong>
-                  <br>• Mengurangi dengan bilangan negatif sama dengan menjumlahkan: <code>a - (-b) = a + b</code> (Contoh: <code>12 - (-5) = 17</code>).
+                <li><strong>Penjumlahan (+) &amp; Pengurangan (-) Bilangan Positif dan Negatif:</strong>
+                  <br>• Menjumlahkan bilangan negatif sama dengan mengurangi: a + (-b) = a - b (Contoh: 18 + (-7) = 11).
+                  <br>• Mengurangi dengan bilangan negatif sama dengan menjumlahkan: a - (-b) = a + b (Contoh: 12 - (-5) = 17).
                 </li>
-                <li><strong>Perkalian (<code>*</code>) &amp; Pembagian (<code>/</code>):</strong>
-                  <br>• Tanda sama menghasilkan positif: <code>(-) × (-) = (+)</code> dan <code>(-) ÷ (-) = (+)</code>.
-                  <br>• Tanda berbeda menghasilkan negatif: <code>(+) × (-) = (-)</code>.
+                <li><strong>Perkalian (×) &amp; Pembagian (÷) Bilangan Bertanda:</strong>
+                  <br>• Tanda <strong>sama</strong> menghasilkan <strong>positif (+)</strong>: (+) × (+) = (+) dan (-) × (-) = (+), begitu pula (-) ÷ (-) = (+).
+                  <br>• Tanda <strong>berbeda</strong> menghasilkan <strong>negatif (-)</strong>: (+) × (-) = (-) dan (-) ÷ (+) = (-).
                 </li>
-                <li><strong>Sifat Distributif untuk Hitung Cepat:</strong> <code>a × (b + c) = (a × b) + (a × c)</code>. Misalnya <code>37 × 68 + 37 × 32 = 37 × (68 + 32) = 37 × 100 = 3700</code>.</li>
+                <li><strong>Sifat Nol (0) dan Satu (1):</strong>
+                  <br>• Identitas penjumlahan: a + 0 = a. Identitas perkalian: a × 1 = a.
+                  <br>• Perkalian dengan nol: a × 0 = 0. Pembagian nol oleh bilangan tak-nol: 0 ÷ a = 0.
+                  <br>• Pembagian bilangan apa pun dengan 0 (a ÷ 0) adalah <strong>tidak terdefinisi</strong>.
+                </li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Operasi Dasar di Java (<code>int</code> vs <code>double</code>)</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Operasi Aritmatika Dasar</span></div>
-                <pre class="code-pre" data-highlight="java">int a = 12, b = -5;
-int tambah = a - b;        // 12 - (-5) = 17
-int kali = a * b;          // 12 * (-5) = -60
-int bagiBulat = 19 / 4;    // 4 (desimal .75 dibuang pada int)
-double bagiDesimal = 19.0 / 4.0; // 4.75
-System.out.println(tambah + ", " + kali + ", " + bagiBulat + ", " + bagiDesimal);</pre>
-              </div>
+              <h3>⚡ 2. Rumusan Sifat Operasi untuk Berhitung Cepat</h3>
+              <ul>
+                <li><strong>Sifat Komutatif (Pertukaran):</strong> a + b = b + a dan a × b = b × a.</li>
+                <li><strong>Sifat Asosiatif (Pengelompokan):</strong> (a + b) + c = a + (b + c) dan (a × b) × c = a × (b × c).</li>
+                <li><strong>Sifat Distributif (Penyebaran — Sangat Penting untuk Hitung Cepat!):</strong>
+                  <br>• a × (b + c) = (a × b) + (a × c)
+                  <br>• a × (b - c) = (a × b) - (a × c)
+                  <br><em>Contoh Hitung Cepat:</em> 37 × 68 + 37 × 32 = 37 × (68 + 32) = 37 × 100 = <strong>3.700</strong>.
+                </li>
+              </ul>
             </div>
           </div>
         `
@@ -345,22 +364,25 @@ System.out.println(tambah + ", " + kali + ", " + bagiBulat + ", " + bagiDesimal)
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>📐 1. Pembahasan Materi: Urutan Prioritas Operasi Bilangan</h3>
-              <p>Dalam ekspresi campuran yang melibatkan banyak operator, urutan pengerjaan yang wajib dipatuhi (baik di matematika maupun di kompilator Java) adalah:</p>
+              <h3>📐 1. Pembahasan Materi: Hirarki &amp; Urutan Prioritas Operasi Campuran</h3>
+              <p>Dalam menyelesaikan operasi hitung campuran yang memuat berbagai tanda operasi sekaligus, urutan pengerjaan yang wajib dipatuhi (aturan <strong>KURKABATAKU</strong> / PEMDAS) adalah:</p>
               <ol>
-                <li><strong>Tanda Kurung <code>( )</code>:</strong> Dikerjakan paling awal dari kurung paling dalam.</li>
-                <li><strong>Pangkat &amp; Akar:</strong> Eksponen dievaluasi sebelum perkalian/pembagian.</li>
-                <li><strong>Kali (<code>*</code>), Bagi (<code>/</code>), dan Modulo (<code>%</code>):</strong> Memiliki prioritas setara; wajib dikerjakan berurutan dari <strong>kiri ke kanan</strong>.</li>
-                <li><strong>Tambah (<code>+</code>) dan Kurang (<code>-</code>):</strong> Prioritas paling akhir; dikerjakan dari <strong>kiri ke kanan</strong>.</li>
+                <li><strong>Tanda Kurung ( ... ):</strong> Kerjakan operasi di dalam tanda kurung paling awal (mulai dari kurung paling dalam jika bersarang).</li>
+                <li><strong>Perpangkatan &amp; Akar (a<sup>n</sup>, √a):</strong> Dikerjakan setelah tanda kurung selesai.</li>
+                <li><strong>Perkalian (×) dan Pembagian (÷):</strong> Memiliki kedudukan yang <strong>setara/sama kuat</strong>. Jika muncul berurutan, wajib dikerjakan dari <strong>kiri ke kanan</strong>!</li>
+                <li><strong>Penjumlahan (+) dan Pengurangan (-):</strong> Memiliki kedudukan yang <strong>setara</strong> dan dikerjakan paling akhir dari <strong>kiri ke kanan</strong>.</li>
               </ol>
             </div>
             <div class="info-card">
               <h3>🧪 2. Contoh Pembahasan Langkah demi Langkah</h3>
-              <p>Evaluasi ekspresi Java: <code>int x = 40 - 24 / 4 * 3 + (10 - 4) * 2;</code></p>
+              <p><strong>Soal:</strong> Hitunglah nilai dari 40 - 24 ÷ 4 × 3 + (10 - 4) × 2</p>
               <ul>
-                <li>Langkah 1 (Kurung): <code>(10 - 4) = 6</code></li>
-                <li>Langkah 2 (Bagi &amp; Kali dari kiri!): <code>24 / 4 = 6</code>, lalu <code>6 * 3 = 18</code> (hati-hati: jangan mengalikan <code>4 * 3</code> dulu!). Kemudian <code>6 * 2 = 12</code>.</li>
-                <li>Langkah 3 (Kurang &amp; Tambah): <code>40 - 18 + 12 = 22 + 12 = 34</code>.</li>
+                <li><strong>Langkah 1 (Tanda Kurung):</strong> (10 - 4) = 6, sehingga kalimat menjadi 40 - 24 ÷ 4 × 3 + 6 × 2.</li>
+                <li><strong>Langkah 2 (Bagi &amp; Kali dari Kiri ke Kanan):</strong>
+                  <br>• Hitung 24 ÷ 4 = 6, lalu langsung kalikan 6 × 3 = 18 <em>(Hati-hati: jangan mengalikan 4 × 3 terlebih dahulu!)</em>.
+                  <br>• Hitung 6 × 2 = 12.
+                </li>
+                <li><strong>Langkah 3 (Kurang &amp; Tambah dari Kiri):</strong> 40 - 18 + 12 = 22 + 12 = <strong>34</strong>.</li>
               </ul>
             </div>
           </div>
@@ -373,24 +395,33 @@ System.out.println(tambah + ", " + kali + ", " + bagiBulat + ", " + bagiDesimal)
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🍰 1. Pembahasan Materi: Operasi Pecahan &amp; Persentase</h3>
+              <h3>🍰 1. Pembahasan Materi: Rumus Operasi Pecahan</h3>
               <ul>
-                <li><strong>Penjumlahan &amp; Pengurangan Pecahan:</strong> Samakan penyebut dengan KPK: <code>a/b ± c/d = (ad ± bc) / bd</code>.</li>
-                <li><strong>Perkalian &amp; Pembagian Pecahan:</strong> <code>(a/b) × (c/d) = (ac)/(bd)</code> dan <code>(a/b) ÷ (c/d) = (a/b) × (d/c)</code>.</li>
-                <li><strong>Persentase:</strong> <code>p% = p / 100</code>.
-                  <br>• <strong>Diskon Bertingkat (Ganda):</strong> Diskon 20% + 10% bukanlah 30%, melainkan bayar <code>80% × 90% = 72%</code> dari harga awal (total diskon efektif = <code>28%</code>).
+                <li><strong>Penjumlahan &amp; Pengurangan Pecahan:</strong> Samakan penyebutnya terlebih dahulu (menggunakan KPK):
+                  <br>a/b ± c/d = ((a × d) ± (b × c))/(b × d)
+                </li>
+                <li><strong>Perkalian Pecahan:</strong> Kalikan pembilang dengan pembilang, dan penyebut dengan penyebut:
+                  <br>a/b × c/d = (a × c)/(b × d)
+                </li>
+                <li><strong>Pembagian Pecahan:</strong> Ubah tanda bagi menjadi kali dengan membalik pecahan pembagi (kebalikannya):
+                  <br>a/b ÷ c/d = a/b × d/c = (a × d)/(b × c)
                 </li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Perhitungan Persentase &amp; Pecahan di Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Kalkulasi Diskon Bertingkat</span></div>
-                <pre class="code-pre" data-highlight="java">double hargaAwal = 500000.0;
-double setelahDiskon1 = hargaAwal * (1.0 - 0.20); // Diskon 20% -> 400000.0
-double hargaAkhir = setelahDiskon1 * (1.0 - 0.10); // Diskon lagi 10% -> 360000.0
-System.out.println("Harga Akhir: " + hargaAkhir);</pre>
-              </div>
+              <h3>💯 2. Rumus Persentase, Kenaikan &amp; Diskon Bertingkat</h3>
+              <ul>
+                <li><strong>Konsep Dasar Persen:</strong> p% = p/100.Nilai p% dari N adalah p/100 × N.</li>
+                <li><strong>Persentase Perubahan (Kenaikan / Penurunan / Untung / Rugi):</strong>
+                  <br>Persentase Perubahan = (Selisih Nilai)/(Nilai Awal) × 100%
+                </li>
+                <li><strong>Mencari Harga Awal Sebelum Diskon d%:</strong>
+                  <br>Harga Awal = 100/(100 - d) × Harga Setelah Diskon
+                </li>
+                <li><strong>Diskon Ganda / Bertingkat (d_1% lalu d_2%):</strong>
+                  <br>Diskon 20% ditambah 10% <strong>bukanlah</strong> 30%, melainkan membayar (100% - 20%) × (100% - 10%) = 80% × 90% = 72% dari harga semula (total diskon efektif = 28%).
+                </li>
+              </ul>
             </div>
           </div>
         `
@@ -402,23 +433,26 @@ System.out.println("Harga Akhir: " + hargaAkhir);</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🚀 1. Pembahasan Materi: Hukum Eksponen &amp; Bentuk Akar</h3>
+              <h3>🚀 1. Pembahasan Materi: Rumus &amp; Sifat Perpangkatan (Eksponen)</h3>
               <ul>
-                <li><strong>Perkalian &amp; Pembagian Basis Sama:</strong> <code>a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup></code> dan <code>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m-n</sup></code>.</li>
-                <li><strong>Pangkat Dipangkatkan:</strong> <code>(a<sup>m</sup>)<sup>n</sup> = a<sup>m·n</sup></code>.</li>
-                <li><strong>Pangkat Nol &amp; Negatif:</strong> <code>a<sup>0</sup> = 1</code> (untuk <code>a ≠ 0</code>) dan <code>a<sup>-n</sup> = 1 / a<sup>n</sup></code>.</li>
-                <li><strong>Sifat Bentuk Akar:</strong> <code>√(a × b) = √a × √b</code> dan <code>p√c ± q√c = (p ± q)√c</code>.</li>
+                <li><strong>Perkalian Basis Sama (Pangkat Dijumlah):</strong> a^m × a^n = a<sup>m+n</sup></li>
+                <li><strong>Pembagian Basis Sama (Pangkat Dikurang):</strong> a^m/a^n = a<sup>m-n</sup> (untuk a ≠ 0)</li>
+                <li><strong>Pangkat Dipangkatkan (Pangkat Dikali):</strong> (a^m)^n = a<sup>m × n</sup></li>
+                <li><strong>Pangkat Perkalian / Pembagian:</strong> (a × b)^n = a^n × b^n dan (a/b)^n = a^n/b^n</li>
+                <li><strong>Pangkat Nol &amp; Pangkat Negatif:</strong> a<sup>0</sup> = 1 (untuk a ≠ 0) dan a<sup>-n</sup> = 1/a^n</li>
+                <li><strong>Pangkat Pecahan:</strong> a<sup>m/n</sup> = <sup>n</sup>√(a^m) = (<sup>n</sup>√(a))^m</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Method <code>Math.pow()</code> dan <code>Math.sqrt()</code> di Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Eksponen &amp; Akar</span></div>
-                <pre class="code-pre" data-highlight="java">double pangkat = Math.pow(3, 4); // 3^4 = 81.0
-double akar = Math.sqrt(196);    // akar kuadrat 196 = 14.0
-int total = (int) (pangkat + akar);
-System.out.println("Total: " + total); // Output: 95</pre>
-              </div>
+              <h3>√ 2. Sifat Bentuk Akar &amp; Identitas Aljabar Penting</h3>
+              <ul>
+                <li><strong>Menyederhanakan Bentuk Akar:</strong> √(a × b) = √a × √b (Contoh: √75 = √(25 × 3) = 5√3).</li>
+                <li><strong>Penjumlahan &amp; Pengurangan Akar Sejenis:</strong> p√c ± q√c = (p ± q)√c.</li>
+                <li><strong>Trik Hitung Cepat Selisih Kuadrat:</strong>
+                  <br>a<sup>2</sup> - b<sup>2</sup> = (a + b)(a - b)
+                  <br><em>Contoh:</em> √(13<sup>2</sup> - 12<sup>2</sup>) = √((13 + 12)(13 - 12)) = √(25 × 1) = <strong>5</strong>.
+                </li>
+              </ul>
             </div>
           </div>
         `
@@ -430,31 +464,33 @@ System.out.println("Total: " + total); // Output: 95</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🔢 1. Pembahasan Materi: Prima, Genap/Ganjil, FPB &amp; KPK</h3>
+              <h3>🔢 1. Pembahasan Materi: Klasifikasi Bilangan, Genap/Ganjil &amp; Prima</h3>
               <ul>
-                <li><strong>Bilangan Prima:</strong> Bilangan asli &gt; 1 yang hanya habis dibagi 1 dan dirinya sendiri: <code>2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...</code> (Angka 1 bukan prima; angka 2 adalah satu-satunya prima genap).</li>
-                <li><strong>Aturan Keterbagian Cepat:</strong>
-                  <br>• Habis dibagi 3: jumlah digit-digitnya habis dibagi 3.
-                  <br>• Habis dibagi 4: 2 digit terakhir habis dibagi 4.
-                  <br>• Habis dibagi 9: jumlah digit-digitnya habis dibagi 9.
+                <li><strong>Sifat Bilangan Genap &amp; Ganjil:</strong>
+                  <br>• Ganjil ± Ganjil = Genap &nbsp;|&nbsp; Genap ± Genap = Genap &nbsp;|&nbsp; Ganjil ± Genap = Ganjil
+                  <br>• Ganjil × Ganjil = Ganjil, sedangkan perkalian dengan bilangan Genap <strong>selalu menghasilkan Genap</strong>.
                 </li>
-                <li><strong>FPB vs KPK:</strong> FPB mencari pembagi bersama terbesar (untuk membagi paket sama rata); KPK mencari kelipatan bersama terkecil (untuk jadwal bertemu kembali).</li>
+                <li><strong>Bilangan Prima:</strong> Bilangan asli lebih dari 1 yang hanya memiliki tepat 2 faktor pembagi positif (yaitu 1 dan dirinya sendiri):
+                  <br>2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, ...
+                  <br><em>Catatan Penting:</em> Angka 1 <strong>bukan</strong> bilangan prima, dan angka 2 adalah <strong>satu-satunya bilangan prima yang genap</strong>.
+                </li>
+                <li><strong>Ciri Habis Dibagi:</strong>
+                  <br>• <em>Habis dibagi 3:</em> Jumlah seluruh angka penyusunnya habis dibagi 3.
+                  <br>• <em>Habis dibagi 4:</em> Dua angka terakhirnya habis dibagi 4.
+                  <br>• <em>Habis dibagi 9:</em> Jumlah seluruh angka penyusunnya habis dibagi 9.
+                </li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Cek Bilangan Prima &amp; Genap/Ganjil di Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Algoritma Cek Bilangan Prima</span></div>
-                <pre class="code-pre" data-highlight="java">int n = 17;
-boolean isPrima = (n > 1);
-for (int i = 2; i * i <= n; i++) {
-    if (n % i == 0) {
-        isPrima = false;
-        break;
-    }
-}
-System.out.println(n + " adalah prima: " + isPrima); // true</pre>
-              </div>
+              <h3>⚙️ 2. Rumus FPB, KPK &amp; Banyak Faktor Pembagi</h3>
+              <ul>
+                <li><strong>FPB (Faktor Persekutuan Terbesar):</strong> Digunakan pada soal <em>membagi barang ke dalam sebanyak mungkin kelompok/bingkisan sama rata</em>.</li>
+                <li><strong>KPK (Kelipatan Persekutuan Terkecil):</strong> Digunakan pada soal <em>jadwal menyala/bertemu kembali secara bersamaan</em>.</li>
+                <li><strong>Hubungan Dua Bilangan (A dan B) dengan FPB &amp; KPK:</strong>
+                  <br>A × B = FPB(A, B) × KPK(A, B)
+                </li>
+                <li><strong>Rumus Banyak Faktor Positif:</strong> Jika faktorisasi prima suatu bilangan adalah N = p_1^a × p_2^b, maka banyaknya faktor pembagi bulat positifnya adalah (a + 1)(b + 1).</li>
+              </ul>
             </div>
           </div>
         `
@@ -466,30 +502,33 @@ System.out.println(n + " adalah prima: " + isPrima); // true</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>📈 1. Pembahasan Materi: Barisan Aritmatika &amp; Geometri</h3>
+              <h3>📈 1. Pembahasan Materi: Barisan &amp; Deret Aritmatika (Selisih Tetap)</h3>
+              <p><strong>Barisan Aritmatika</strong> adalah barisan bilangan yang memiliki selisih (beda b) tetap antar suku yang berdekatan (b = U<sub>2</sub> - U<sub>1</sub>):</p>
               <ul>
-                <li><strong>Barisan Aritmatika (Selisih/Beda tetap <code>b</code>):</strong>
-                  <br>• Rumus suku ke-$n$: <code>U<sub>n</sub> = a + (n - 1)b</code>
-                  <br>• Rumus jumlah $n$ suku pertama: <code>S<sub>n</sub> = (n / 2) × (2a + (n - 1)b) = (n / 2) × (a + U<sub>n</sub>)</code>
+                <li><strong>Rumus Suku ke-n (U<sub>n</sub>):</strong>
+                  <br>U<sub>n</sub> = a + (n - 1)b
+                  <em>(dengan a = U<sub>1</sub> adalah suku pertama, dan b adalah beda).</em>
                 </li>
-                <li><strong>Barisan Geometri (Rasio pengali tetap <code>r</code>):</strong>
-                  <br>• Rumus suku ke-$n$: <code>U<sub>n</sub> = a × r<sup>n-1</sup></code>
-                  <br>• Rumus jumlah $n$ suku pertama ($r &gt; 1$): <code>S<sub>n</sub> = a(r<sup>n</sup> - 1) / (r - 1)</code>
+                <li><strong>Rumus Jumlah n Suku Pertama (S<sub>n</sub>):</strong>
+                  <br>S<sub>n</sub> = n/2 × (a + U<sub>n</sub>) = n/2 × (2a + (n - 1)b)
+                </li>
+                <li><strong>Rumus Cepat Jumlah n Bilangan Asli Pertama (1 + 2 + 3 + ... + n):</strong>
+                  <br>S<sub>n</sub> = (n(n + 1))/2
                 </li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Menghitung Deret dengan Perulangan Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Akumulasi Deret Aritmatika</span></div>
-                <pre class="code-pre" data-highlight="java">int a = 4, b = 3, n = 5;
-int sn = 0;
-for (int i = 0; i < n; i++) {
-    int suku = a + (i * b); // 4, 7, 10, 13, 16
-    sn = sn + suku;
-}
-System.out.println("Jumlah 5 suku pertama: " + sn); // Output: 50</pre>
-              </div>
+              <h3>🚀 2. Pembahasan Materi: Barisan &amp; Deret Geometri (Rasio Tetap)</h3>
+              <p><strong>Barisan Geometri</strong> adalah barisan bilangan yang memiliki perbandingan/pengali (rasio r) tetap antar suku yang berdekatan (r = U<sub>2</sub>/U<sub>1</sub>):</p>
+              <ul>
+                <li><strong>Rumus Suku ke-n (U<sub>n</sub>):</strong>
+                  <br>U<sub>n</sub> = a × r<sup>n-1</sup>
+                </li>
+                <li><strong>Rumus Jumlah n Suku Pertama (S<sub>n</sub> untuk r &gt; 1):</strong>
+                  <br>S<sub>n</sub> = (a(r<sup>n</sup> - 1))/(r - 1)
+                </li>
+                <li><strong>Aplikasi Pembelahan / Pelipatan:</strong> Jika suatu populasi awal M_0 menjadi r kali lipat setiap periode waktu, maka setelah k kali periode jumlahnya adalah M_k = M_0 × r^k.</li>
+              </ul>
             </div>
           </div>
         `
@@ -501,29 +540,24 @@ System.out.println("Jumlah 5 suku pertama: " + sn); // Output: 50</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🔍 1. Pembahasan Materi: Ragam Pola Bilangan</h3>
+              <h3>🔍 1. Pembahasan Materi: Jenis-Jenis Pola Bilangan Utama</h3>
               <ul>
-                <li><strong>Pola Selisih Bertingkat (Orde Dua):</strong> Contoh <code>2, 6, 12, 20, 30, 42</code> memiliki selisih tingkat pertama <code>+4, +6, +8, +10, +12</code> dan selisih tingkat kedua tetap <code>+2</code>.</li>
-                <li><strong>Pola Fibonacci:</strong> Setiap suku merupakan jumlah dari 2 suku di depannya: <code>1, 1, 2, 3, 5, 8, 13, 21, 34, ...</code></li>
-                <li><strong>Pola Bilangan Kuadrat &amp; Kubik:</strong>
-                  <br>• Kuadrat ($n^2$): <code>1, 4, 9, 16, 25, 36, 49, 64, 81, 100</code>
-                  <br>• Kubik ($n^3$): <code>1, 8, 27, 64, 125, 216</code>
+                <li><strong>Pola Selisih Bertingkat (Tingkat Dua):</strong> Selisih antar sukunya bertambah secara teratur. Contoh: 3, 7, 13, 21, 31, ... memiliki selisih +4, +6, +8, +10, sehingga suku berikutnya ditambah +12 menjadi 31 + 12 = 43.</li>
+                <li><strong>Pola Fibonacci:</strong> Setiap suku merupakan hasil penjumlahan dari <strong>dua suku tepat di depannya</strong> (U<sub>n</sub> = U<sub>n-1</sub> + U<sub>n-2</sub>):
+                  <br>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
                 </li>
-                <li><strong>Pola Larik Ganda (Berselang-seling):</strong> Suku ganjil ($U_1, U_3, U_5$) dan suku genap ($U_2, U_4, U_6$) berjalan mengikuti dua aturan berbeda.</li>
+                <li><strong>Pola Larik Ganda (Lompat Satu Suku):</strong> Suku urutan ganjil (U<sub>1</sub>, U<sub>3</sub>, U<sub>5</sub>, ...) dan suku urutan genap (U<sub>2</sub>, U<sub>4</sub>, U<sub>6</sub>, ...) memiliki dua pola terpisah yang berjalan berselang-seling.</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Implementasi Pola Bilangan di Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Pembentukan Pola Bertingkat</span></div>
-                <pre class="code-pre" data-highlight="java">int nilai = 2;
-int selisih = 4;
-for (int i = 1; i <= 5; i++) {
-    System.out.print(nilai + " "); // Mencetak: 2 6 12 20 30
-    nilai = nilai + selisih;
-    selisih = selisih + 2;
-}</pre>
-              </div>
+              <h3>📐 2. Rumus Pola Bilangan Khusus &amp; Pola Huruf</h3>
+              <ul>
+                <li><strong>Pola Bilangan Persegi / Kuadrat:</strong> U<sub>n</sub> = n<sup>2</sup> → 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, ...</li>
+                <li><strong>Pola Bilangan Kubik (Pangkat Tiga):</strong> U<sub>n</sub> = n<sup>3</sup> → 1, 8, 27, 64, 125, 216, ...</li>
+                <li><strong>Pola Bilangan Segitiga:</strong> U<sub>n</sub> = (n(n + 1))/2 → 1, 3, 6, 10, 15, 21, 28, 36, ...</li>
+                <li><strong>Pola Bilangan Persegi Panjang:</strong> U<sub>n</sub> = n(n + 1) → 2, 6, 12, 20, 30, 42, ...</li>
+                <li><strong>Pola Huruf Alfabet:</strong> Ubah huruf menjadi nomor urut alfabet (A=1, B=2, C=3, ..., Z=26) untuk melihat selisih angkanya dengan cepat.</li>
+              </ul>
             </div>
           </div>
         `
@@ -535,25 +569,27 @@ for (int i = 1; i <= 5; i++) {
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>📝 1. Pembahasan Materi: Transformasi Masalah ke Aljabar</h3>
-              <p>Menyusun model matematika berarti mengubah narasi cerita menjadi sistem persamaan menggunakan variabel ($x, y, z$):</p>
-              <ol>
-                <li><strong>Tetapkan Variabel:</strong> Misalkan besaran yang belum diketahui sebagai $x$ dan $y$.</li>
-                <li><strong>Terjemahkan Kata Kunci:</strong>
-                  <br>• <em>"Selisih A dan B adalah 8"</em> → <code>A - B = 8</code>
-                  <br>• <em>"Tiga kali bilangan pertama ditambah dua kali bilangan kedua adalah 34"</em> → <code>3x + 2y = 34</code>
-                  <br>• <em>"Tiga bilangan ganjil berurutan"</em> → <code>x, (x + 2), (x + 4)</code>
-                </li>
-                <li><strong>Selesaikan dengan Eliminasi &amp; Substitusi.</strong></li>
-              </ol>
+              <h3>📝 1. Pembahasan Materi: Menerjemahkan Soal Cerita ke Persamaan Aljabar</h3>
+              <p><strong>Penyusunan model matematika</strong> adalah teknik mengubah kalimat verbal pada soal cerita menjadi persamaan atau pertidaksamaan matematika menggunakan variabel (x, y):</p>
+              <ul>
+                <li><em>"Jumlah dua bilangan adalah S dan selisihnya adalah D"</em> → x + y = S dan x - y = D.<br>
+                <strong>Rumus Cepat:</strong> Bilangan terbesar x = (S + D)/2 dan bilangan terkecil y = (S - D)/2.</li>
+                <li><em>"Tiga bilangan bulat berurutan"</em> → (x - 1), x, (x + 1) (Rata-ratanya pasti bilangan tengah x).</li>
+                <li><em>"Tiga bilangan genap / ganjil berurutan"</em> → (x - 2), x, (x + 2).</li>
+                <li><em>"Usia A empat tahun yang lalu"</em> → (A - 4); <em>"Usia A lima tahun yang akan datang"</em> → (A + 5).</li>
+              </ul>
             </div>
             <div class="info-card">
-              <h3>🧪 2. Contoh Pembahasan SPLDV</h3>
-              <p><strong>Soal:</strong> Harga 2 lisensi modul A dan 3 modul B adalah Rp190.000, sedangkan 1 modul A dan 2 modul B adalah Rp115.000. Berapa harga 1 modul A?</p>
+              <h3>🧪 2. Contoh Pembahasan Sistem Persamaan Linear Dua Variabel (SPLDV)</h3>
+              <p><strong>Soal:</strong> Harga 3 buku dan 2 pena adalah Rp28.000, sedangkan harga 1 buku dan 2 pena adalah Rp16.000. Berapakah harga 1 buku?</p>
               <ul>
-                <li>Persamaan 1: <code>2A + 3B = 190.000</code></li>
-                <li>Persamaan 2 (kali 2): <code>2A + 4B = 230.000</code></li>
-                <li>Kurangkan: <code>B = 40.000</code>, maka <code>A = 115.000 - 2(40.000) = Rp35.000</code>.</li>
+                <li><strong>Model Matematika:</strong> Misalkan harga buku = B dan harga pena = P:
+                  <br>Persamaan (1): 3B + 2P = 28.000
+                  <br>Persamaan (2): 1B + 2P = 16.000
+                </li>
+                <li><strong>Langkah Eliminasi:</strong> Kurangkan Persamaan (1) dengan Persamaan (2) sehingga variabel 2P habis:
+                  <br>(3B - 1B) = 28.000 - 16.000 ⇒ 2B = 12.000 ⇒ B = <strong>Rp6.000</strong>.
+                </li>
               </ul>
             </div>
           </div>
@@ -566,29 +602,29 @@ for (int i = 1; i <= 5; i++) {
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>⭕ 1. Pembahasan Materi: Teori Himpunan &amp; Diagram Venn</h3>
+              <h3>⭕ 1. Pembahasan Materi: Operasi Himpunan Dasar</h3>
               <ul>
-                <li><strong>Irisan (<code>A ∩ B</code>):</strong> Anggota yang dimiliki bersama oleh himpunan A <em>dan</em> B.</li>
-                <li><strong>Gabungan (<code>A ∪ B</code>):</strong> Seluruh anggota yang ada di A <em>atau</em> di B: <code>n(A ∪ B) = n(A) + n(B) - n(A ∩ B)</code>.</li>
-                <li><strong>Selisih (<code>A - B</code>):</strong> Anggota yang <em>hanya</em> ada di A (tidak termasuk irisan): <code>n(A saja) = n(A) - n(A ∩ B)</code>.</li>
-                <li><strong>Rumus Semesta:</strong> <code>n(S) = n(A) + n(B) - n(A ∩ B) + n(Tidak Keduanya)</code>.</li>
-                <li><strong>Banyak Himpunan Bagian (Subset):</strong> Jika suatu himpunan memiliki $k$ anggota, maka banyak himpunan bagiannya adalah <code>2<sup>k</sup></code>.</li>
+                <li><strong>Irisan (A ∩ B):</strong> Himpunan anggota yang berada di A <strong>sekaligus</strong> berada di B.</li>
+                <li><strong>Gabungan (A ∪ B):</strong> Himpunan seluruh anggota yang berada di A <strong>atau</strong> di B.</li>
+                <li><strong>Selisih (A - B):</strong> Himpunan anggota yang <strong>hanya</strong> berada di A tetapi tidak berada di B:
+                  <br>n(A  saja) = n(A) - n(A ∩ B)
+                </li>
+                <li><strong>Komplemen (A^c):</strong> Himpunan anggota semesta S yang berada di luar himpunan A: n(A^c) = n(S) - n(A).</li>
+                <li><strong>Banyaknya Himpunan Bagian (Subset):</strong> Jika suatu himpunan memiliki k anggota, maka banyaknya seluruh himpunan bagian yang dapat dibentuk adalah <strong>2^k</strong>.</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Himpunan &amp; Pencarian Irisan Array di Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Mencari Irisan Dua Array (A ∩ B)</span></div>
-                <pre class="code-pre" data-highlight="java">int[] A = {2, 4, 6, 8};
-int[] B = {3, 4, 5, 8, 9};
-int irisanCount = 0;
-for (int i = 0; i < A.length; i++) {
-    for (int j = 0; j < B.length; j++) {
-        if (A[i] == B[j]) irisanCount++; // Menemukan 4 dan 8
-    }
-}
-System.out.println("Jumlah anggota A irisan B: " + irisanCount); // 2</pre>
-              </div>
+              <h3>📊 2. Rumus Utama Diagram Venn Dua Himpunan</h3>
+              <p>Jika dalam suatu kelompok semesta n(S) terdapat himpunan A, himpunan B, irisan keduanya n(A ∩ B), dan kelompok yang tidak memilih keduanya n(T):</p>
+              <ul>
+                <li><strong>Rumus Semesta Diagram Venn:</strong>
+                  <br>n(S) = n(A) + n(B) - n(A ∩ B) + n(Tidak Keduanya)
+                </li>
+                <li><strong>Cara Cepat Mencari Irisan (x):</strong>
+                  <br>x = (n(A) + n(B) + n(Tidak Keduanya)) - n(S)
+                </li>
+                <li><em>Contoh:</em> Dari 50 orang, 32 gemar basket, 28 gemar futsal, dan 6 tidak gemar keduanya. Maka yang gemar keduanya adalah (32 + 28 + 6) - 50 = 66 - 50 = <strong>16 orang</strong>.</li>
+              </ul>
             </div>
           </div>
         `
@@ -600,29 +636,25 @@ System.out.println("Jumlah anggota A irisan B: " + irisanCount); // 2</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🎲 1. Pembahasan Materi: Kombinatorika &amp; Aritmatika Modulo</h3>
+              <h3>🎲 1. Pembahasan Materi: Kaidah Pencacahan, Permutasi &amp; Kombinasi</h3>
               <ul>
-                <li><strong>Kaidah Perkalian:</strong> Jika kejadian 1 dapat dilakukan dengan $m$ cara dan kejadian 2 dengan $n$ cara, maka keduanya dapat dilakukan bersama dalam <code>m × n</code> cara.</li>
-                <li><strong>Permutasi (Urutan Diperhatikan, AB ≠ BA):</strong>
-                  <br><code>P(n, r) = n! / (n - r)!</code> — digunakan untuk menyusun jabatan (Ketua, Wakil), PIN/Password, atau urutan duduk.
+                <li><strong>Kaidah Perkalian (Aturan Pengisian Tempat):</strong> Jika tahap pertama dapat dilakukan dengan m cara dan tahap kedua dengan n cara, maka keduanya dapat dilakukan bersama dalam <strong>m × n cara</strong>.</li>
+                <li><strong>Faktorial (n!):</strong> Perkalian bilangan asli berurutan dari n turun hingga 1: n! = n × (n-1) × ... × 1 (dengan 0! = 1).</li>
+                <li><strong>Permutasi (Urutan DIPERHATIKAN, AB ≠ BA):</strong> Digunakan untuk pemilihan jabatan (Ketua, Wakil, Bendahara), penyusunan kode/PIN, atau posisi duduk:
+                  <br>P(n, r) = n!/((n - r)!)
                 </li>
-                <li><strong>Kombinasi (Urutan Diabaikan, AB = BA):</strong>
-                  <br><code>C(n, r) = n! / (r! × (n - r)!)</code> — digunakan untuk memilih anggota tim, memilih soal, atau jabat tangan.
+                <li><strong>Kombinasi (Urutan DIABAIKAN, AB = BA):</strong> Digunakan untuk memilih anggota tim, memilih soal, atau jabat tangan:
+                  <br>C(n, r) = n!/(r! × (n - r)!)
                 </li>
-                <li><strong>Modulo (<code>a mod b</code> atau <code>a % b</code> di Java):</strong> Sisa pembagian bilangan bulat $a$ oleh $b$.</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Faktorial &amp; Modulo dalam Kode Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Menghitung n! (Faktorial)</span></div>
-                <pre class="code-pre" data-highlight="java">int n = 5;
-int faktorial = 1;
-for (int i = 1; i <= n; i++) {
-    faktorial = faktorial * i; // 1 * 2 * 3 * 4 * 5 = 120
-}
-System.out.println("5! = " + faktorial); // Output: 120</pre>
-              </div>
+              <h3>🔁 2. Permutasi Siklis, Graf &amp; Aritmatika Modulo</h3>
+              <ul>
+                <li><strong>Permutasi Melingkar (Siklis):</strong> Banyak cara menyusun n orang mengelilingi meja bundar adalah (n - 1)!.</li>
+                <li><strong>Rumus Jabat Tangan / Koneksi Antar-Titik:</strong> Banyak garis hubung langsung antar n titik (atau jabat tangan n orang) adalah (n(n - 1))/2.</li>
+                <li><strong>Aritmatika Modulo (a  mod  b):</strong> Menyatakan <strong>sisa pembagian</strong> bilangan bulat a ketika dibagi oleh b. Misalnya untuk mencari hari: karena 1 minggu = 7 hari, maka 100  hari lagi sama dengan sisa bagi 100 ÷ 7 = 2 hari setelah hari ini.</li>
+              </ul>
             </div>
           </div>
         `
@@ -634,25 +666,24 @@ System.out.println("5! = " + faktorial); // Output: 120</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>⚡ 1. Pembahasan Materi: Hukum Aljabar Boolean</h3>
+              <h3>⚡ 1. Pembahasan Materi: Hukum-Hukum Aljabar Logika (Boolean)</h3>
+              <p><strong>Aljabar Logika (Aljabar Boolean)</strong> mempelajari penyederhanaan dan evaluasi ekspresi logika yang melibatkan variabel bernilai <strong>True (Benar / 1)</strong> dan <strong>False (Salah / 0)</strong> dengan operator <code>and</code> (∧), <code>or</code> (∨), dan <code>not</code> (¬):</p>
               <ul>
-                <li><strong>Hukum De Morgan:</strong>
-                  <br>• <code>!(P &amp;&amp; Q) ≡ (!P) || (!Q)</code>
-                  <br>• <code>!(P || Q) ≡ (!P) &amp;&amp; (!Q)</code>
-                </li>
-                <li><strong>Hukum Absorpsi &amp; Komplemen:</strong>
-                  <br>• <code>P &amp;&amp; (!P) ≡ false</code> dan <code>P || (!P) ≡ true</code>
-                  <br>• <code>P || (P &amp;&amp; Q) ≡ P</code>
-                </li>
+                <li><strong>Hukum Identitas:</strong> P  and True ≡ P &nbsp;|&nbsp; P  or False ≡ P</li>
+                <li><strong>Hukum Dominasi (Null):</strong> P  and False ≡ False &nbsp;|&nbsp; P  or True ≡ True</li>
+                <li><strong>Hukum Komplemen:</strong> P  and (not  P) ≡ False &nbsp;|&nbsp; P  or (not  P) ≡ True</li>
+                <li><strong>Hukum Absorpsi (Penyerapan):</strong> P  or  (P  and  Q) ≡ P dan P  and  (P  or  Q) ≡ P</li>
+                <li><strong>Hukum De Morgan:</strong> not(P  and  Q) ≡ (not  P)  or  (not  Q) dan not(P  or  Q) ≡ (not  P)  and  (not  Q)</li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>🔎 2. Pembahasan Soal Wajib Aljabar Logika</h3>
-              <p>Agar <code>((P and Q) or (notR and S) and (notT or (R and Q)))</code> bernilai <strong>True</strong>:</p>
+              <h3>🔎 2. Pembahasan Lengkap Evaluasi Ekspresi Aljabar Logika</h3>
+              <p><strong>Contoh Soal:</strong> Agar pernyataan <code>((P and Q) or (notR and S) and (notT or (R and Q)))</code> bernilai <strong>True</strong>, tentukan nilai P, Q, R, S, T!</p>
               <ul>
-                <li>Jika <code>P = False, Q = True</code>, maka <code>(P and Q) = False</code>.</li>
-                <li>Maka bagian kanan wajib bernilai <strong>True</strong>: <code>(notR and S) = True</code> mengharuskan <strong><code>R = False</code></strong> dan <strong><code>S = True</code></strong>.</li>
-                <li>Selanjutnya <code>(notT or (R and Q))</code> menjadi <code>(notT or False)</code>. Agar bernilai <strong>True</strong>, maka <code>notT = True</code> sehingga <strong><code>T = False</code></strong>!</li>
+                <li><strong>Langkah 1:</strong> Jika pada pilihan jawaban diberikan P = False dan Q = True, maka bagian pertama <code>(P and Q)</code> bernilai False and True = <strong>False</strong>.</li>
+                <li><strong>Langkah 2:</strong> Agar keseluruhan ekspresi bernilai <strong>True</strong>, maka klausa kedua yaitu <code>(notR and S) and (notT or (R and Q))</code> wajib bernilai <strong>True</strong>.</li>
+                <li><strong>Langkah 3:</strong> Agar <code>(notR and S)</code> bernilai <strong>True</strong>, maka notR = True (berarti <strong>R = False</strong>) dan <strong>S = True</strong>.</li>
+                <li><strong>Langkah 4:</strong> Substitusikan R = False ke <code>(notT or (R and Q))</code> menjadi <code>(notT or False)</code>. Agar bernilai <strong>True</strong>, maka notT = True, sehingga <strong>T = False</strong>!</li>
               </ul>
             </div>
           </div>
@@ -665,25 +696,32 @@ System.out.println("5! = " + faktorial); // Output: 120</pre>
         content: `
           <div class="concept-grid">
             <div class="info-card">
-              <h3>🚗 1. Pembahasan Materi: Kecepatan, Pekerjaan &amp; Perbandingan</h3>
+              <h3>🚗 1. Pembahasan Materi: Rumus Kecepatan, Berpapasan &amp; Menyusul</h3>
               <ul>
-                <li><strong>Kecepatan, Jarak, Waktu:</strong> <code>s = v × t</code>, <code>v = s / t</code>, <code>t = s / v</code>.
-                  <br>• <em>Waktu Berpapasan (berangkat bersamaan):</em> <code>t = Jarak Total / (v<sub>1</sub> + v<sub>2</sub>)</code>.
-                  <br>• <em>Waktu Menyusul:</em> <code>t = Selisih Jarak / (v<sub>2</sub> - v<sub>1</sub>)</code>.
+                <li><strong>Rumus Dasar Jarak (s), Kecepatan (v), dan Waktu (t):</strong>
+                  <br>s = v × t  ,  v = s/t  ,  t = s/v
                 </li>
-                <li><strong>Produktivitas Kerja Gabungan:</strong> Jika pekerja A butuh $a$ hari dan pekerja B butuh $b$ hari, waktu selesai bersama adalah <code>t = (a × b) / (a + b)</code>.</li>
-                <li><strong>Perbandingan Berbalik Nilai:</strong> Jika $P_1$ pekerja selesai dalam $H_1$ hari, maka untuk $P_2$ pekerja berlaku <code>P<sub>1</sub> × H<sub>1</sub> = P<sub>2</sub> × H<sub>2</sub></code>.</li>
+                <li><strong>Waktu Berpapasan (Berangkat pada Waktu yang Sama dari Arah Berlawanan):</strong>
+                  <br>t<sub>papasan</sub> = (Jarak Total)/(v<sub>1</sub> + v<sub>2</sub>)
+                </li>
+                <li><strong>Waktu Menyusul (Berangkat Searah dengan Selisih Jarak Awal Δ s):</strong>
+                  <br>t<sub>menyusul</sub> = (Selisih Jarak Awal (Δ s))/(v<sub>2</sub> - v<sub>1</sub>)
+                </li>
               </ul>
             </div>
             <div class="info-card">
-              <h3>☕ 2. Simulasi Perhitungan Masalah di Java</h3>
-              <div class="code-snippet-box">
-                <div class="code-box-header"><span class="code-lang-tag">JAVA • Waktu Kerja Bersama Dua Mesin</span></div>
-                <pre class="code-pre" data-highlight="java">double waktuMesinA = 6.0; // 6 jam
-double waktuMesinB = 3.0; // 3 jam
-double waktuBersama = (waktuMesinA * waktuMesinB) / (waktuMesinA + waktuMesinB);
-System.out.println("Selesai bersama dalam: " + waktuBersama + " jam"); // 2.0 jam</pre>
-              </div>
+              <h3>⚙️ 2. Rumus Pekerjaan Bersama, Perbandingan &amp; Rata-Rata Gabungan</h3>
+              <ul>
+                <li><strong>Waktu Menyelesaikan Pekerjaan Bersama-sama:</strong> Jika orang pertama sanggup menyelesaikan pekerjaan sendirian dalam waktu a dan orang kedua dalam waktu b, maka jika bekerja bersama-sama:
+                  <br>t<sub>bersama</sub> = (a × b)/(a + b)
+                </li>
+                <li><strong>Perbandingan Berbalik Nilai (Jumlah Pekerja P vs Waktu Hari H):</strong> Semakin banyak pekerja, waktu semakin singkat:
+                  <br>P<sub>1</sub> × H<sub>1</sub> = P<sub>2</sub> × H<sub>2</sub>
+                </li>
+                <li><strong>Rata-Rata Gabungan Dua Kelompok:</strong>
+                  <br>x̄<sub>gab</sub> = ((n<sub>1</sub> × x̄<sub>1</sub>) + (n<sub>2</sub> × x̄<sub>2</sub>))/(n<sub>1</sub> + n<sub>2</sub>)
+                </li>
+              </ul>
             </div>
           </div>
         `
@@ -844,7 +882,7 @@ System.out.println("Output: " + hasilBagi + ", " + sisaBagi + ", " + logika);</p
               <ol>
                 <li><strong>Perulangan <code>for (inisialisasi; kondisi; update)</code>:</strong> Mengecek kondisi di awal sebelum setiap putaran. Jumlah iterasi dapat dihitung secara presisi dari batas awal, batas akhir, dan perubahan nilai pencacah (misal <code>i++</code> atau <code>i += 2</code>).</li>
                 <li><strong>Perulangan <code>do-while</code>:</strong> Menjalankan blok perintah di dalam <code>do { ... }</code> terlebih dahulu <strong>minimal 1 kali</strong>, baru mengevaluasi syarat <code>while (kondisi);</code> di bagian akhir.</li>
-                <li><strong>Perulangan Bersarang (<em>Nested Loop</em>):</strong> Loop di dalam loop. Jika loop luar berputar $M$ kali dan loop dalam berputar $N$ kali tiap putaran luar, maka instruksi terdalam dieksekusi sebanyak $M \times N$ kali.</li>
+                <li><strong>Perulangan Bersarang (<em>Nested Loop</em>):</strong> Loop di dalam loop. Jika loop luar berputar M kali dan loop dalam berputar N kali tiap putaran luar, maka instruksi terdalam dieksekusi sebanyak M × N kali.</li>
               </ol>
             </div>
             <div class="info-card">
